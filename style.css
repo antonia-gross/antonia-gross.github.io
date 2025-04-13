@@ -69,14 +69,6 @@ body {
   line-height: 130px;
 }
 
-.portrait {
-  width: 732px;
-  height: 801px;
-  position: absolute;
-  top: 316px;
-  left: 905px;
-}
-
 .subtitle {
   position: absolute;
   top: 889px;
