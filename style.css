@@ -1,0 +1,363 @@
+body {
+  margin: 0;
+  font-family: 'Fustat', sans-serif;
+  background: white;
+}
+
+.wrapper {
+  width: 1728px;
+  height: 2630px;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-text {
+  width: 820px;
+  position: absolute;
+  left: 754px;
+  top: 1261px;
+  font-size: 50px;
+  font-family: 'Gloock', serif;
+  line-height: 75px;
+}
+
+.intro-text .grey {
+  color: #777777;
+}
+
+.intro-text .brown {
+  color: #9F7B56;
+}
+
+.qualities {
+  width: 460px;
+  position: absolute;
+  left: 154px;
+  top: 1368px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qualities div {
+  color: #9F7B56;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.qualities .line {
+  height: 0px;
+  outline: 2px #9F7B56 solid;
+  outline-offset: -1px;
+}
+
+.hero-img {
+  width: 1728px;
+  height: 1117px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.portfolio-title {
+  position: absolute;
+  left: 154px;
+  top: 340px;
+  color: #1F2C3D;
+  font-size: 250px;
+  font-family: 'Gloock', serif;
+  line-height: 130px;
+}
+
+.portrait {
+  width: 732px;
+  height: 801px;
+  position: absolute;
+  top: 316px;
+  left: 905px;
+}
+
+.subtitle {
+  position: absolute;
+  top: 889px;
+  left: 274px;
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.name {
+  position: absolute;
+  top: 451px;
+  left: 200px;
+  color: white;
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  line-height: 95px;
+}
+
+.description {
+  position: absolute;
+  width: 468px;
+  top: 559px;
+  left: 221px;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.tags {
+  position: absolute;
+  width: 468px;
+  top: 924px;
+  left: 274px;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.vertical-line {
+  position: absolute;
+  width: 123px;
+  top: 558px;
+  left: 200px;
+  height: 0px;
+  transform: rotate(90deg);
+  outline: 2px white solid;
+  outline-offset: -1px;
+  transform-origin: top left;
+}
+
+.circle-outline {
+  width: 92px;
+  height: 92px;
+  padding: 33px 46px;
+  position: absolute;
+  top: 874px;
+  left: 154px;
+  border-radius: 46px;
+  outline: 3px white solid;
+  outline-offset: -3px;
+}
+
+.about-section {
+  width: 1420px;
+  position: absolute;
+  top: 1602px;
+  left: 154px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.about-text {
+  font-size: 20px;
+  color: #777;
+  font-weight: 400;
+  line-height: 31px;
+}
+
+.divider {
+  height: 0;
+  outline: 1px #777 solid;
+  outline-offset: -0.5px; 
+}
+
+.about-img {
+  width: 1420px;
+  height: 698px;
+}
+
+.nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1728px;
+  height: 96px;
+  background: #0C1117;
+  padding: 0 154px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-content {
+  width: 1420px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-box {
+  width: 27px;
+  height: 26px;
+  background: white;
+}
+
+.logo-text {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  gap: 45px;
+}
+
+.nav-links div {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet (z. B. iPad Hochformat & quer) */
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .intro-text,
+  .qualities,
+  .portfolio-title,
+  .portrait,
+  .subtitle,
+  .name,
+  .description,
+  .tags,
+  .vertical-line,
+  .circle-outline,
+  .about-section,
+  .about-img,
+  .nav-bar {
+    position: static;
+  }
+
+  .intro-text {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 32px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .qualities {
+    width: 80%;
+    margin: 20px auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .qualities div {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .portfolio-title {
+    font-size: 80px;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .portrait {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .subtitle,
+  .name,
+  .description,
+  .tags {
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  .name {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .description,
+  .tags {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .vertical-line,
+  .circle-outline {
+    display: none;
+  }
+
+  .about-section {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+
+  .about-text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .about-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .nav-bar {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .intro-text {
+    font-size: 24px;
+  }
+
+  .portfolio-title {
+    font-size: 50px;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+
+  .description,
+  .tags {
+    font-size: 14px;
+  }
+
+  .about-text {
+    font-size: 16px;
+  }
+
+  .nav-links div {
+    font-size: 16px;
+  }
+}
