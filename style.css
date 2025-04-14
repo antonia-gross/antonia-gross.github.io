@@ -1,355 +1,403 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Reset und allgemeine Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: 'Fustat', sans-serif;
-  background: white;
+    font-family: 'Fustat', Arial, sans-serif;
+    color: #1F2C3D;
+    line-height: 1.5;
+    overflow-x: hidden;
 }
 
-.wrapper {
-  width: 1728px;
-  height: 2630px;
-  position: relative;
-  overflow: hidden;
+.container {
+    width: 100%;
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.intro-text {
-  width: 820px;
-  position: absolute;
-  left: 754px;
-  top: 1261px;
-  font-size: 50px;
-  font-family: 'Gloock', serif;
-  line-height: 75px;
+/* Navigation */
+.navbar {
+    width: 100%;
+    height: 77px;
+    background: #0C1117;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
-.intro-text .grey {
-  color: #777777;
-}
-
-.intro-text .brown {
-  color: #9F7B56;
-}
-
-.qualities {
-  width: 460px;
-  position: absolute;
-  left: 154px;
-  top: 1368px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.qualities div {
-  color: #9F7B56;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.qualities .line {
-  height: 0px;
-  outline: 2px #9F7B56 solid;
-  outline-offset: -1px;
-}
-
-.hero-img {
-  width: 1728px;
-  height: 1117px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.portfolio-title {
-  position: absolute;
-  left: 154px;
-  top: 340px;
-  color: #1F2C3D;
-  font-size: 250px;
-  font-family: 'Gloock', serif;
-  line-height: 130px;
-}
-
-.subtitle {
-  position: absolute;
-  top: 889px;
-  left: 274px;
-  color: white;
-  font-size: 25px;
-  font-weight: 600;
-}
-
-.name {
-  position: absolute;
-  top: 451px;
-  left: 200px;
-  color: white;
-  font-size: 80px;
-  font-weight: 700;
-  letter-spacing: 2.4px;
-  line-height: 95px;
-}
-
-.description {
-  position: absolute;
-  width: 468px;
-  top: 559px;
-  left: 221px;
-  color: white;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.tags {
-  position: absolute;
-  width: 468px;
-  top: 924px;
-  left: 274px;
-  color: white;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.vertical-line {
-  position: absolute;
-  width: 123px;
-  top: 558px;
-  left: 200px;
-  height: 0px;
-  transform: rotate(90deg);
-  outline: 2px white solid;
-  outline-offset: -1px;
-  transform-origin: top left;
-}
-
-.circle-outline {
-  width: 92px;
-  height: 92px;
-  padding: 33px 46px;
-  position: absolute;
-  top: 874px;
-  left: 154px;
-  border-radius: 46px;
-  outline: 3px white solid;
-  outline-offset: -3px;
-}
-
-.about-section {
-  width: 1420px;
-  position: absolute;
-  top: 1602px;
-  left: 154px;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-
-.about-text {
-  font-size: 20px;
-  color: #777;
-  font-weight: 400;
-  line-height: 31px;
-}
-
-.divider {
-  height: 0;
-  outline: 1px #777 solid;
-  outline-offset: -0.5px; 
-}
-
-.about-img {
-  width: 1420px;
-  height: 698px;
-}
-
-.nav-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1728px;
-  height: 77px;
-  background: #0C1117;
-  padding: 0 154px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-content {
-  width: 1420px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navbar-content {
+    height: 77px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 25px 0;
 }
 
-.logo-box {
-  width: 27px;
-  height: 26px;
-  background: white;
+.logo-icon {
+    width: 27px;
+    height: 26px;
+    background: white;
 }
 
 .logo-text {
-  color: white;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.nav-links {
-  display: flex;
-  gap: 45px;
-}
-
-.nav-links div {
-  color: white;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-/* ========== RESPONSIVE DESIGN ========== */
-
-/* Tablet (z. B. iPad Hochformat & quer) */
-@media (max-width: 1024px) {
-  .wrapper {
-    width: 100%;
-    height: auto;
-    overflow: visible;
-  }
-
-  .intro-text,
-  .qualities,
-  .portfolio-title,
-  .portrait,
-  .subtitle,
-  .name,
-  .description,
-  .tags,
-  .vertical-line,
-  .circle-outline,
-  .about-section,
-  .about-img,
-  .nav-bar {
-    position: static;
-  }
-
-  .intro-text {
-    width: 90%;
-    margin: 0 auto;
-    font-size: 32px;
-    line-height: 1.4;
-    text-align: center;
-  }
-
-  .qualities {
-    width: 80%;
-    margin: 20px auto;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .qualities div {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .portfolio-title {
-    font-size: 80px;
-    text-align: center;
-    margin-top: 50px;
-  }
-
-  .portrait {
-    width: 100%;
-    height: auto;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .subtitle,
-  .name,
-  .description,
-  .tags {
-    text-align: center;
-    margin: 10px auto;
-  }
-
-  .name {
-    font-size: 40px;
-    line-height: 1.2;
-  }
-
-  .description,
-  .tags {
-    width: 90%;
-    font-size: 16px;
-  }
-
-  .vertical-line,
-  .circle-outline {
-    display: none;
-  }
-
-  .about-section {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 50px;
-  }
-
-  .about-text {
+    color: white;
     font-size: 18px;
-    line-height: 28px;
-  }
+    font-weight: 400;
+}
 
-  .about-img {
+.main-nav {
+    display: flex;
+    gap: 45px;
+    padding: 25px 0;
+}
+
+.main-nav a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #9F7B56;
+}
+
+/* Hero Section - vertikal zentriert, linksbündig */
+.hero {
+    min-height: 100vh;
     width: 100%;
-    height: auto;
-  }
+    background-color: #333; /* Fallback */
+    background-image: url('images/startseite/antonia.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 77px; /* Platz für die Navbar */
+    display: flex;
+    align-items: center; /* Vertikale Zentrierung */
+}
 
-  .nav-bar {
+.hero-content {
+    position: relative;
+    padding: 60px 20px 160px 20px; /* Extra Padding unten für Badge und Text */
+    margin-left: 154px; /* Original-Abstand von links */
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Elemente linksbündig ausrichten */
+}
+
+.portfolio-title {
+    font-family: 'Gloock', serif;
+    font-size: clamp(80px, 15vw, 250px); /* Responsive mit Minimum und Maximum */
+    font-weight: 400;
+    line-height: 0.8em;
+    margin-bottom: 40px;
+}
+
+.name {
+    font-size: clamp(40px, 5vw, 80px); /* Responsive mit Minimum und Maximum */
+    font-weight: 700;
+    line-height: 1.2em;
+    letter-spacing: 2.4px;
+    margin-top: 20px;
+}
+
+.intro-text {
     width: 100%;
-    padding: 0 20px;
-  }
+    max-width: 468px;
+    font-size: clamp(16px, 1.5vw, 18px);
+    margin-top: 30px;
+}
 
-  .nav-content {
+/* Badge und spezialisierungen unterhalb des Hauptinhalts */
+.specialties-container {
+    margin-top: 60px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Linksbündig ausrichten */
+}
+
+.circle-badge {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 20px;
+}
+
+.profession {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-left: 120px; /* Ursprünglicher Abstand von links */
+    margin-top: -60px; /* Nach oben verschieben neben den Badge */
+}
+
+.specialties {
+    font-size: 18px;
+    margin-left: 120px; /* Ursprünglicher Abstand von links */
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 1200px) {
+    .hero-content {
+        margin-left: 100px;
+    }
+    
+    .circle-badge {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .profession {
+        margin-left: 100px;
+    }
+    
+    .specialties {
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content {
+        margin-left: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        margin-left: 40px;
+    }
+    
+    .circle-badge {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .profession {
+        font-size: 22px;
+        margin-left: 90px;
+        margin-top: -50px;
+    }
+    
+    .specialties {
+        font-size: 16px;
+        margin-left: 90px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content {
+        margin-left: 20px;
+        max-width: 90%;
+    }
+    
+    .circle-badge {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .profession {
+        font-size: 20px;
+        margin-left: 80px;
+        margin-top: -45px;
+    }
+    
+    .specialties {
+        margin-left: 80px;
+    }
+}
+
+/* Description Section */
+.description {
+    padding: 100px 0;
+}
+
+.skills-container {
+    width: 460px;
+    margin-bottom: 50px;
+}
+
+.skills-list {
+    display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
-  }
-
-  .nav-links {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 }
 
-/* Smartphone */
-@media (max-width: 600px) {
-  .intro-text {
-    font-size: 24px;
-  }
+.skill-item {
+    color: #9F7B56;
+    font-size: 18px;
+    font-weight: 700;
+}
 
-  .portfolio-title {
+.skill-divider {
+    height: 0;
+    border-top: 2px solid #9F7B56;
+    margin: 5px 0;
+}
+
+.statement {
+    width: 100%;
+    max-width: 820px;
+    margin-left: auto;
+    font-family: 'Gloock', serif;
     font-size: 50px;
-  }
+    line-height: 75px;
+}
 
-  .name {
-    font-size: 32px;
-  }
+.statement-text {
+    color: #777777;
+}
 
-  .description,
-  .tags {
-    font-size: 14px;
-  }
+.statement-highlight {
+    color: #9F7B56;
+}
 
-  .about-text {
-    font-size: 16px;
-  }
+/* About Section */
+.about {
+    padding: 50px 0;
+}
 
-  .nav-links div {
-    font-size: 16px;
-  }
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.about-text {
+    color: #777777;
+    font-size: 20px;
+    line-height: 31px;
+}
+
+.about-divider {
+    height: 1px;
+    background: black;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: auto;
+    max-height: 698px;
+    object-fit: cover;
+}
+
+/* Responsive Styles */
+@media (max-width: 1600px) {
+    .portfolio-title {
+        font-size: 200px;
+    }
+    
+    .name {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .portfolio-title {
+        font-size: 150px;
+        line-height: 100px;
+    }
+    
+    .name {
+        font-size: 50px;
+        line-height: 65px;
+    }
+    
+    .statement {
+        font-size: 40px;
+        line-height: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content {
+        left: 100px;
+    }
+    
+    .portfolio-title {
+        font-size: 120px;
+        line-height: 80px;
+    }
+    
+    .statement {
+        font-size: 30px;
+        line-height: 45px;
+    }
+    
+    .intro-text {
+        width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* Mobile Navigation müsste hier implementiert werden */
+    }
+    
+    .hero-content {
+        left: 50px;
+        top: 250px;
+    }
+    
+    .portfolio-title {
+        font-size: 100px;
+        line-height: 65px;
+    }
+    
+    .name {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    
+    .intro-text {
+        width: 300px;
+        font-size: 16px;
+    }
+    
+    .skills-container {
+        width: 100%;
+    }
+    
+    .statement {
+        width: 100%;
+        font-size: 24px;
+        line-height: 36px;
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-title {
+        font-size: 80px;
+        line-height: 50px;
+    }
+    
+    .hero-content {
+        left: 20px;
+    }
+    
+    .vertical-line {
+        display: none;
+    }
 }

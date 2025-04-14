@@ -1,61 +1,115 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Antonia Groß</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;600;700&family=Gloock&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Antonia Groß</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <link href="Test.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen">
+    <!-- Du musst die Fustat-Schriftart selbst einbinden, da sie nicht bei Google Fonts verfügbar ist -->
 </head>
 <body>
-  <div class="wrapper">
-    <div class="intro-text">
-      <span class="grey">Ich bin eine motivierte, kreative Designerin, </span>
-      <span class="brown">die es liebt zu tüfteln - </span>
-      <span class="grey">im Web, im Print, - für komplette Corporate Designs.</span>
-    </div>
-    <div class="qualities">
-      <div>motiviert</div>
-      <div class="line"></div>
-      <div>aufgeschlossen</div>
-      <div class="line"></div>
-      <div>kreativ</div>
-      <div class="line"></div>
-      <div>vielseitig</div>
-      <div class="line"></div>
-    </div>
-    <img class="hero-img" src="images/startseite/antonia.jpg" alt="hero-image" />
-    <div class="portfolio-title">Portfolio</div>
-    <img class="hero-img" src="images/startseite/antonia_transparent.png" alt="Portrait" />
-    <div class="subtitle">Grafik- & Kommunikationsdesign</div>
-    <div class="name">Antonia Groß</div>
-    <div class="description">
-      Mein Antrieb ist die Neugierde, die Freude an Design-Experimenten und der Wunsch, aus meinem besonderen Talent für vielseitige, breitgefächerte Anfangsideen großartige visuelle Ergebnisse für den Kunden zu erzielen – und zwar in allen Disziplinen der Kommunikation.
-    </div>
-    <div class="tags">Printdesign | Webdesign | Illustrationen | Fotografien</div>
-    <div class="vertical-line"></div>
-    <div class="circle-outline"></div>
-    <div class="about-section">
-      <div class="about-text">
-        Mein Name ist Antonia, ich bin 24 Jahre jung und habe nach meiner abgeschlossenen Ausbildung zur Pferdewirtin auch noch mein zweites Hobby zum Beruf gemacht: meine Kreativität. Die Ausbildung zur Grafik- und Kommunikationsdesignerin habe ich mit ausgezeichnetem Erfolg am zweijährigen Tageskolleg der HTL1 in Linz absolviert.
-      </div>
-      <div class="divider"></div>
-      <img class="about-img" src="images/startseite/infografik_broschuere_quer_1420x698px.jpg" alt="About Image" />
-    </div>
-    <div class="nav-bar">
-      <div class="nav-content">
-        <div class="logo">
-          <div class="logo-box"></div>
-          <div class="logo-text">Logo</div>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">Logo</div>
+            </div>
+            <nav class="main-nav">
+                <a href="#about">Über mich</a>
+                <a href="#projects">Projekte</a>
+                <a href="#specialties">Besonderheiten</a>
+                <a href="#contact">Kontakt</a>
+            </nav>
         </div>
-        <div class="nav-links">
-          <div>Über mich</div>
-          <div>Projekte</div>
-          <div>Besonderheiten</div>
-          <div>Kontakt</div>
+    </header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="portfolio-title">Portfolio</h1>
+        <h2 class="name">Antonia Groß</h2>
+        <p class="intro-text">
+            Mein Antrieb ist die Neugierde, die Freude an Design-Experimenten und der Wunsch, 
+            aus meinem besonderen Talent für vielseitige, breitgefächerte Anfangsideen großartige 
+            visuelle Ergebnisse für den Kunden zu erzielen – und zwar in allen Disziplinen der Kommunikation.
+        </p>
+        
+        <div class="specialties-container">
+            <div class="circle-badge"></div>
+            <h3 class="profession">Grafik- & Kommunikationsdesign</h3>
+            <p class="specialties">Printdesign | Webdesign | Illustrationen | Fotografien</p>
         </div>
-      </div>
     </div>
-  </div>
+</section>
+
+    <!-- Description Section -->
+    <section class="description">
+        <div class="container">
+            <div class="skills-container">
+                <div class="skills-list">
+                    <div class="skill-item">motiviert</div>
+                    <div class="skill-divider"></div>
+                    <div class="skill-item">aufgeschlossen</div>
+                    <div class="skill-divider"></div>
+                    <div class="skill-item">kreativ</div>
+                    <div class="skill-divider"></div>
+                    <div class="skill-item">vielseitig</div>
+                    <div class="skill-divider"></div>
+                </div>
+            </div>
+            <div class="statement">
+                <span class="statement-text">Ich bin eine motivierte, kreative Designerin, </span>
+                <span class="statement-highlight">die es liebt zu tüfteln - </span>
+                <span class="statement-text">im Web, im Print, - für komplette Corporate Designs. </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <p class="about-text">
+                    Mein Name ist Antonia, ich bin 24 Jahre jung und habe nach meiner abgeschlossenen 
+                    Ausbildung zur Pferdewirtin auch noch mein zweites Hobby zum Beruf gemacht: meine Kreativität. 
+                    Die Ausbildung zur Grafik- und Kommunikationsdesignerin habe ich mit ausgezeichnetem Erfolg 
+                    am zweijährigen Tageskolleg der HTL1 in Linz absolviert.
+                </p>
+                <div class="about-divider"></div>
+            </div>
+            <div class="portfolio-image">
+                <!-- Hier kommt dein tatsächliches Bild hin -->
+                <img src="images/startseite/infografik_broschuere_quer_1420x698px.jpg" alt="Portfolio-Beispiel">
+            </div>
+        </div>
+    </section>
+
+    <!-- Leerer Bereich für zukünftige Abschnitte (Projekte, Besonderheiten, Kontakt) -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <!-- Projekte kommen hier hin -->
+        </div>
+    </section>
+
+    <section id="specialties" class="specialties-section">
+        <div class="container">
+            <!-- Besonderheiten kommen hier hin -->
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <!-- Kontaktinformationen kommen hier hin -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <!-- Footer-Inhalt hier -->
+        </div>
+    </footer>
 </body>
 </html>
