@@ -1,7 +1,6 @@
 @charset "UTF-8";
-/* CSS Document */
 
-/* Reset und allgemeine Styles */
+/* ============ ALLGEMEINE STYLES ============ */
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +12,9 @@ body {
     color: #1F2C3D;
     line-height: 1.5;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: white;
 }
 
 .container {
@@ -22,7 +24,7 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
+/* ============ NAVIGATION ============ */
 .navbar {
     width: 100%;
     height: 77px;
@@ -30,6 +32,10 @@ body {
     position: fixed;
     top: 0;
     z-index: 1000;
+}
+
+.infografik-navbar {
+    background: rgba(161, 67, 64, 0.70);
 }
 
 .navbar-content {
@@ -75,7 +81,11 @@ body {
     color: #9F7B56;
 }
 
-/* Hero Section - vertikal zentriert, linksbündig */
+.main-nav a.active {
+    color: #9F7B56;
+}
+
+/* ============ HERO SECTION (STARTSEITE) ============ */
 .hero {
     min-height: 100vh;
     width: 100%;
@@ -91,24 +101,24 @@ body {
 
 .hero-content {
     position: relative;
-    padding: 60px 20px 160px 20px; /* Extra Padding unten für Badge und Text */
-    margin-left: 154px; /* Original-Abstand von links */
+    padding: 60px 20px 160px 20px;
+    margin-left: 154px;
     max-width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Elemente linksbündig ausrichten */
+    align-items: flex-start;
 }
 
 .portfolio-title {
     font-family: 'Gloock', serif;
-    font-size: clamp(80px, 15vw, 250px); /* Responsive mit Minimum und Maximum */
+    font-size: clamp(80px, 15vw, 250px);
     font-weight: 400;
     line-height: 0.8em;
     margin-bottom: 40px;
 }
 
 .name {
-    font-size: clamp(40px, 5vw, 80px); /* Responsive mit Minimum und Maximum */
+    font-size: clamp(40px, 5vw, 80px);
     font-weight: 700;
     line-height: 1.2em;
     letter-spacing: 2.4px;
@@ -122,14 +132,13 @@ body {
     margin-top: 30px;
 }
 
-/* Badge und spezialisierungen unterhalb des Hauptinhalts */
 .specialties-container {
     margin-top: 60px;
     position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Linksbündig ausrichten */
+    align-items: flex-start;
 }
 
 .circle-badge {
@@ -144,86 +153,16 @@ body {
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
-    margin-left: 120px; /* Ursprünglicher Abstand von links */
-    margin-top: -60px; /* Nach oben verschieben neben den Badge */
+    margin-left: 120px;
+    margin-top: -60px;
 }
 
 .specialties {
     font-size: 18px;
-    margin-left: 120px; /* Ursprünglicher Abstand von links */
+    margin-left: 120px;
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 1200px) {
-    .hero-content {
-        margin-left: 100px;
-    }
-    
-    .circle-badge {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .profession {
-        margin-left: 100px;
-    }
-    
-    .specialties {
-        margin-left: 100px;
-    }
-}
-
-@media (max-width: 992px) {
-    .hero-content {
-        margin-left: 80px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-content {
-        margin-left: 40px;
-    }
-    
-    .circle-badge {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .profession {
-        font-size: 22px;
-        margin-left: 90px;
-        margin-top: -50px;
-    }
-    
-    .specialties {
-        font-size: 16px;
-        margin-left: 90px;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-content {
-        margin-left: 20px;
-        max-width: 90%;
-    }
-    
-    .circle-badge {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .profession {
-        font-size: 20px;
-        margin-left: 80px;
-        margin-top: -45px;
-    }
-    
-    .specialties {
-        margin-left: 80px;
-    }
-}
-
-/* Description Section */
+/* ============ DESCRIPTION SECTION (STARTSEITE) ============ */
 .description {
     padding: 100px 0 60px; 
 }
@@ -231,14 +170,14 @@ body {
 .description .container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; /* Ändert die Ausrichtung auf unten */
+    align-items: flex-end;
     gap: 40px;
 }
 
 .skills-container {
     width: 460px;
     flex-shrink: 0;
-    margin-bottom: 15px; /* Feinabstimmung, um den letzten Strich genau auszurichten */
+    margin-bottom: 15px;
 }
 
 .skills-list {
@@ -259,12 +198,14 @@ body {
     margin: 5px 0;
 }
 
-.statement {
-    flex-grow: 1;
-    max-width: 820px;
+/* ============ STATEMENT ELEMENTE ============ */
+.statement, 
+.infografik-statement {
     font-family: 'Gloock', serif;
     font-size: 50px;
     line-height: 75px;
+    width: 100%;
+    max-width: 820px;
 }
 
 .statement-text {
@@ -275,7 +216,16 @@ body {
     color: #9F7B56;
 }
 
-/* About Section */
+.infografik-statement {
+    margin: 163px auto 107px auto;
+    width: 820px;
+}
+
+.infografik-statement .statement-highlight {
+    color: rgba(161, 67, 64, 0.70);
+}
+
+/* ============ ABOUT SECTION (STARTSEITE) ============ */
 .about {
     padding-top: 0;
 }
@@ -293,7 +243,8 @@ body {
     line-height: 31px;
 }
 
-.about-divider {
+.about-divider,
+.description-divider {
     height: 1px;
     background: black;
 }
@@ -310,120 +261,13 @@ body {
     object-fit: cover;
 }
 
-/* Responsive Styles */
-@media (max-width: 1600px) {
-    .portfolio-title {
-        font-size: 200px;
-    }
-    
-    .name {
-        font-size: 60px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .portfolio-title {
-        font-size: 150px;
-        line-height: 100px;
-    }
-    
-    .name {
-        font-size: 50px;
-        line-height: 65px;
-    }
-    
-    .statement {
-        font-size: 40px;
-        line-height: 60px;
-    }
-}
-
-@media (max-width: 992px) {
-    .hero-content {
-        left: 100px;
-    }
-    
-    .portfolio-title {
-        font-size: 120px;
-        line-height: 80px;
-    }
-    
-    .statement {
-        font-size: 30px;
-        line-height: 45px;
-    }
-    
-    .intro-text {
-        width: 350px;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-nav {
-        display: none; /* Mobile Navigation müsste hier implementiert werden */
-    }
-    
-    .hero-content {
-        left: 50px;
-        top: 250px;
-    }
-    
-    .portfolio-title {
-        font-size: 100px;
-        line-height: 65px;
-    }
-    
-    .name {
-        font-size: 40px;
-        line-height: 50px;
-    }
-    
-    .intro-text {
-        width: 300px;
-        font-size: 16px;
-    }
-    
-    .skills-container {
-        width: 100%;
-    }
-    
-    .statement {
-        width: 100%;
-        font-size: 24px;
-        line-height: 36px;
-    }
-}
-
-@media (max-width: 576px) {
-    .portfolio-title {
-        font-size: 80px;
-        line-height: 50px;
-    }
-    
-    .hero-content {
-        left: 20px;
-    }
-    
-    .vertical-line {
-        display: none;
-    }
-}
-
-
-/* Projekt-Seite Styles */
-
-/* Aktiver Menüpunkt */
-.main-nav a.active {
-    color: #9F7B56;
-}
-
-/* Projekt Hero Section */
+/* ============ PROJEKT SEITE STYLES ============ */
 .projekt-hero {
     width: 100%;
-    height: calc(100vh - 77px); /* Vollbildhöhe minus Navbar-Höhe */
+    height: calc(100vh - 77px);
     position: relative;
     overflow: hidden;
-    margin-top: 77px; /* Platz für die Navbar */
+    margin-top: 77px;
 }
 
 .projekt-hero-img {
@@ -436,7 +280,7 @@ body {
 .projekt-filter {
     width: 100%;
     padding: 30px 0;
-	margin-top: 70px;
+    margin-top: 70px;
     position: relative;
 }
 
@@ -444,48 +288,71 @@ body {
     display: flex;
     align-items: center;
     gap: 40px;
-    margin-left: 154px;
+    padding: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-width: calc(100% - 40px);
+    position: relative;
+}
+
+.filter-nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9));
+    pointer-events: none; /* Damit kann man durch den Verlauf hindurch klicken */
+}
+
+.filter-nav::before {
+    content: '';
+	flex: 0 0 20px;
+    height: 1px;
 }
 
 .filter-item {
     color: #9F7B56;
-    font-size: 25px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, border-bottom 0.3s ease;
+	border-bottom: 0px solid transparent;
+    padding-bottom: 3px;
 }
 
 .filter-item:hover {
     opacity: 0.8;
+	border-bottom: 2px solid #9F7B56;
 }
 
 .filter-item.active {
     position: relative;
+	border-bottom: 2px solid #9F7B56;
 }
 
 .filter-indicator {
-    width: 43px;
-    height: 0;
-    border-top: 2px solid #9F7B56;
-    position: absolute;
-    left: 154px;
-    margin-top: 6px;
+    display: none;
 }
 
 /* Projekt Grid */
 .grid-container {
     width: 100%;
     max-width: 1420px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    justify-content: center;
+	padding: 0;
 }
 
-.projekt-item, .projekt-placeholder {
+.projekt-item, 
+.projekt-placeholder {
     width: 100%;
     height: 0;
-    padding-bottom: 100%; /* Macht das Element quadratisch */
+    padding-bottom: 100%;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -535,99 +402,23 @@ body {
 }
 
 .projekt-placeholder {
-    width: 460px;
-    height: 460px;
     background: #EDEDED;
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 992px) {
-    .description .container {
-        flex-direction: column;
-    }
-    
-    .statement {
-        margin-top: 40px;
-    }
-}
-
-@media (min-width: 1440px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 Spalten auf größeren Bildschirmen */
-    }
-}
-
-@media (max-width: 1439px) and (min-width: 992px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 Spalten auf Laptops */
-    }
-}
-
-@media (max-width: 991px) and (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 Spalten auf Tablets */
-    }
-}
-
-@media (max-width: 767px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* 1 Spalte auf Mobilgeräten */
-    }
-}
-
-
-/* Infografik-spezifische Styles */
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Fustat', Arial, sans-serif;
-    background-color: white;
-    overflow-x: hidden;
-}
-
-/* Navigationsleiste mit rotem Hintergrund für diese Seite */
-.infografik-navbar {
-    background: rgba(161, 67, 64, 0.70);
-}
-
+/* ============ INFOGRAFIK SEITE STYLES ============ */
 .infografik-container {
     width: 100%;
-    max-width: 1728px;
+    max-width: 1420px;
     margin: 0 auto;
+    padding: 0 20px;
     position: relative;
-    padding-top: 96px; /* Abstand für die Navbar */
+    padding-top: 96px;
 }
 
-/* Statement-Block */
-.infografik-statement {
-    width: 820px;
-    height: auto;
-    margin-left: 754px;
-    margin-top: 163px; /* Position vom Figma-Design */
-    margin-bottom: 107px; /* Angepasst für besseren Abstand */
-}
-
-.infografik-statement .statement-text {
-    color: #777777;
-    font-size: 50px;
-    font-family: 'Gloock', serif;
-    font-weight: 400;
-    line-height: 75px;
-}
-
-.infografik-statement .statement-highlight {
-    color: rgba(161, 67, 64, 0.70);
-    font-size: 50px;
-    font-family: 'Gloock', serif;
-    font-weight: 400;
-    line-height: 75px;
-}
-
-/* Skills-Liste */
+/* Infografik Skills */
 .infografik-skills {
     width: 460px;
-    margin-left: 154px;
+    margin: 0 auto 50px auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -635,22 +426,17 @@ body {
 
 .infografik-skills .skill-item {
     color: rgba(161, 67, 64, 0.70);
-    font-size: 18px;
-    font-family: 'Fustat', sans-serif;
-    font-weight: 700;
 }
 
 .infografik-skills .skill-divider {
-    height: 0;
     border-top: 2px solid rgba(161, 67, 64, 0.70);
-    margin: 5px 0;
 }
 
-/* Projektbeschreibung */
+/* Infografik Beschreibung */
 .infografik-description {
-    width: 1420px;
-    margin-left: 154px;
-    margin-top: 50px;
+    width: 100%;
+    max-width: 1420px;
+    margin: 0 auto 50px auto;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -665,21 +451,14 @@ body {
 .description-text {
     color: #777777;
     font-size: 20px;
-    font-family: 'Fustat', sans-serif;
-    font-weight: 400;
     line-height: 31px;
-}
-
-.description-divider {
-    height: 1px;
-    background-color: black;
 }
 
 /* Image Slider */
 .image-slider {
     position: relative;
-    width: 1420px;
-    height: 698px;
+    width: 100%;
+    height: auto;
     overflow: hidden;
 }
 
@@ -702,13 +481,15 @@ body {
     border-radius: 50%;
 }
 
-/* Bildergalerie */
-.infografik-gallery {
-    width: 1420px;
-    margin-left: 154px;
-    margin-top: 50px;
+/* Galerien */
+.infografik-gallery,
+.illustration-gallery,
+.full-width-gallery {
+    width: 100%;
+    max-width: 1420px;
+    margin: 50px auto;
     display: grid;
-    grid-template-columns: 700px 700px;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
@@ -727,49 +508,21 @@ body {
     height: 700px;
 }
 
-/* Abschnittstitel */
-.section-title {
-    width: 1420px;
-    margin-left: 154px;
-    margin-top: 50px;
-    color: #1F2C3D;
-    font-size: 50px;
-    font-family: 'Gloock', serif;
-    font-weight: 400;
-    line-height: 75px;
+.full-width-gallery {
+    display: flex;
+    flex-direction: column;
 }
 
-.section-divider {
-    width: 1420px;
-    height: 1px;
-    margin-left: 154px;
-    margin-top: 43px;
-    background-color: black;
+.full-width-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
-.section-description {
-    width: 1420px;
-    margin-left: 154px;
-    margin-top: 30px;
-    color: #1F2C3D;
-    font-size: 20px;
-    font-family: 'Fustat', sans-serif;
-    font-weight: 400;
-    line-height: 31px;
-}
-
-/* Illustration-Galerie */
-.illustration-gallery {
-    width: 1420px;
-    margin-left: 154px;
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: 700px 700px;
-    gap: 20px;
-}
-
+/* Farb-Block */
 .color-block {
-    width: 700px;
+    width: 100%;
     height: 700px;
     background: rgba(161, 67, 64, 0.70);
     display: flex;
@@ -780,87 +533,100 @@ body {
 .color-code {
     color: white;
     font-size: 25px;
-    font-family: 'Fustat', sans-serif;
     font-weight: 600;
-    position: absolute;
-    margin-left: 300px;
 }
 
-.last-row {
-    margin-top: 20px;
+/* Abschnittstitel */
+.section-title {
+    width: 100%;
+    max-width: 1420px;
+    margin: 50px auto 0 auto;
+    color: #1F2C3D;
+    font-size: 50px;
+    font-family: 'Gloock', serif;
+    font-weight: 400;
+    line-height: 75px;
 }
 
-/* Große Bilder am Ende */
-.full-width-gallery {
-    width: 1420px;
-    margin-left: 154px;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.section-divider {
+    width: 100%;
+    max-width: 1420px;
+    height: 1px;
+    margin: 43px auto 0 auto;
+    background-color: black;
 }
 
-.full-width-image {
-    width: 1420px;
-    height: 698px;
-    object-fit: cover;
+.section-description {
+    width: 100%;
+    max-width: 1420px;
+    margin: 30px auto 0 auto;
+    color: #1F2C3D;
+    font-size: 20px;
+    line-height: 31px;
 }
 
-/* Footer-Platzhalter */
+/* Footer */
 .footer-placeholder {
-    width: 1728px;
+    width: 100%;
     height: 366px;
     background: #EDEDED;
     margin-top: 50px;
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 1728px) {
-    .infografik-container,
-    .footer-placeholder {
-        width: 100%;
-    }
-    
-    .infografik-statement,
-    .infografik-skills,
-    .infografik-description,
-    .infografik-gallery,
-    .section-title,
-    .section-divider,
-    .section-description,
-    .illustration-gallery,
-    .full-width-gallery {
-        width: 90%;
-        margin-left: 5%;
-    }
-    
-    .image-slider {
-        width: 100%;
-        height: auto;
-    }
-    
-    .infografik-statement {
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
-    }
-}
-
-@media (max-width: 1440px) {
-    .infografik-gallery,
-    .illustration-gallery {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .gallery-image-vertical,
-    .gallery-image-square {
-        height: auto;
-    }
-}
-
+/* ============ RESPONSIVE STYLES ============ */
 @media (max-width: 992px) {
-    .infografik-statement {
-        width: 90%;
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1600px) {
+    .portfolio-title {
+        font-size: 200px;
+    }
+    
+    .name {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-content {
+        margin-left: 100px;
+    }
+    
+    .circle-badge {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .profession {
+        margin-left: 100px;
+    }
+    
+    .specialties {
+        margin-left: 100px;
+    }
+    
+    .portfolio-title {
+        font-size: 150px;
+        line-height: 100px;
+    }
+    
+    .name {
+        font-size: 50px;
+        line-height: 65px;
+    }
+    
+    .statement,
+    .infografik-statement,
+    .section-title {
         font-size: 40px;
         line-height: 60px;
     }
@@ -870,14 +636,100 @@ body {
         font-size: 40px;
         line-height: 60px;
     }
+}
+
+@media (max-width: 992px) {
+    .hero-content {
+        margin-left: 80px;
+    }
     
-    .section-title {
-        font-size: 40px;
-        line-height: 60px;
+    .portfolio-title {
+        font-size: 120px;
+        line-height: 80px;
+    }
+    
+    .statement,
+    .infografik-statement {
+        font-size: 30px;
+        line-height: 45px;
+    }
+    
+    .intro-text {
+        max-width: 350px;
+    }
+    
+    .description .container {
+        flex-direction: column;
+    }
+    
+    .statement {
+        margin-top: 40px;
+    }
+    
+    .infografik-gallery,
+    .illustration-gallery {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+    
+    .hero-content {
+        margin-left: 40px;
+    }
+    
+    .circle-badge {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .profession {
+        font-size: 22px;
+        margin-left: 90px;
+        margin-top: -50px;
+    }
+    
+    .specialties {
+        font-size: 16px;
+        margin-left: 90px;
+    }
+    
+    .portfolio-title {
+        font-size: 100px;
+        line-height: 65px;
+    }
+    
+    .name {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    
+    .intro-text {
+        max-width: 300px;
+        font-size: 16px;
+    }
+    
+    .skills-container {
+        width: 100%;
+    }
+    
+    .statement,
+    .infografik-statement,
+    .section-title {
+        width: 100%;
+        font-size: 24px;
+        line-height: 36px;
+    }
+    
+    .infografik-statement .statement-text,
+    .infografik-statement .statement-highlight {
+        font-size: 24px;
+        line-height: 36px;
+    }
+    
     .infografik-gallery,
     .illustration-gallery {
         grid-template-columns: 1fr;
@@ -885,20 +737,51 @@ body {
     
     .gallery-image-vertical {
         grid-row: auto;
+        height: auto;
+    }
+    
+    .gallery-image-square {
+        height: auto;
     }
     
     .color-block {
-        width: 100%;
         height: 300px;
     }
     
     .infografik-statement {
         width: 90%;
+        margin: 100px auto 50px auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content {
+        margin-left: 20px;
+        max-width: 90%;
     }
     
-    .infografik-statement .statement-text,
-    .infografik-statement .statement-highlight {
-        font-size: 30px;
-        line-height: 45px;
+    .circle-badge {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .profession {
+        font-size: 20px;
+        margin-left: 80px;
+        margin-top: -45px;
+    }
+    
+    .specialties {
+        margin-left: 80px;
+    }
+    
+    .portfolio-title {
+        font-size: 80px;
+        line-height: 50px;
+    }
+    
+    .filter-nav {
+        overflow-x: auto;
+        padding-bottom: 10px;
     }
 }
