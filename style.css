@@ -172,6 +172,9 @@ body {
     justify-content: space-between;
     align-items: flex-end;
     gap: 40px;
+    position: relative;
+    max-width: 1420px;
+    width: 100%;
 }
 
 .skills-container {
@@ -184,6 +187,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
 }
 
 .skill-item {
@@ -196,14 +200,15 @@ body {
     height: 0;
     border-top: 2px solid #9F7B56;
     margin: 5px 0;
+    width: 100%;
 }
 
-/* ============ STATEMENT ELEMENTE ============ */
+/* Statement Styling */
 .statement, 
 .infografik-statement {
     font-family: 'Gloock', serif;
-    font-size: 50px;
-    line-height: 75px;
+    font-size: clamp(28px, 4vw, 50px);
+    line-height: 1.5;
     width: 100%;
     max-width: 820px;
 }
@@ -216,13 +221,40 @@ body {
     color: #9F7B56;
 }
 
+/* Infografik-spezifische Styles */
+.infografik-skills {
+    width: 460px;
+    flex-shrink: 0;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.infografik-skills .skill-item {
+    color: rgba(161, 67, 64, 0.70);
+}
+
+.infografik-skills .skill-divider {
+    border-top: 2px solid rgba(161, 67, 64, 0.70);
+}
+
 .infografik-statement {
-    margin: 163px auto 107px auto;
-    width: 820px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 820px;
 }
 
 .infografik-statement .statement-highlight {
     color: rgba(161, 67, 64, 0.70);
+}
+
+.infografik-container {
+    width: 100%;
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    padding-top: 77px;
 }
 
 /* ============ ABOUT SECTION (STARTSEITE) ============ */
@@ -239,8 +271,8 @@ body {
 
 .about-text {
     color: #777777;
-    font-size: 20px;
-    line-height: 31px;
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.6;
 }
 
 .about-divider,
@@ -278,24 +310,26 @@ body {
 
 /* Filter Navigation */
 .projekt-filter {
+    margin: 70px 0 30px 0;
     width: 100%;
-    padding: 30px 0;
-    margin-top: 70px;
-    position: relative;
 }
 
 .filter-nav {
     display: flex;
     align-items: center;
     gap: 40px;
-    padding: 0;
     overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    max-width: calc(100% - 40px);
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
     position: relative;
+    padding-bottom: 10px; /* Platz für den Border-Bottom */
 }
 
+.filter-nav::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+}
+
+/* Verlauf am rechten Rand */
 .filter-nav::after {
     content: '';
     position: absolute;
@@ -304,13 +338,7 @@ body {
     width: 50px;
     height: 100%;
     background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.9));
-    pointer-events: none; /* Damit kann man durch den Verlauf hindurch klicken */
-}
-
-.filter-nav::before {
-    content: '';
-	flex: 0 0 20px;
-    height: 1px;
+    pointer-events: none;
 }
 
 .filter-item {
@@ -318,34 +346,31 @@ body {
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
-    transition: opacity 0.3s ease, border-bottom 0.3s ease;
-	border-bottom: 0px solid transparent;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
     padding-bottom: 3px;
+    white-space: nowrap;
 }
 
 .filter-item:hover {
     opacity: 0.8;
-	border-bottom: 2px solid #9F7B56;
+    border-bottom: 2px solid #9F7B56;
 }
 
 .filter-item.active {
-    position: relative;
-	border-bottom: 2px solid #9F7B56;
-}
-
-.filter-indicator {
-    display: none;
+    border-bottom: 2px solid #9F7B56;
 }
 
 /* Projekt Grid */
+.projekt-grid {
+    margin-bottom: 50px;
+}
+
 .grid-container {
-    width: 100%;
-    max-width: 1420px;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-	padding: 0;
+    width: 100%;
 }
 
 .projekt-item, 
@@ -406,37 +431,11 @@ body {
 }
 
 /* ============ INFOGRAFIK SEITE STYLES ============ */
-.infografik-container {
-    width: 100%;
-    max-width: 1420px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    padding-top: 96px;
-}
-
-/* Infografik Skills */
-.infografik-skills {
-    width: 460px;
-    margin: 0 auto 50px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.infografik-skills .skill-item {
-    color: rgba(161, 67, 64, 0.70);
-}
-
-.infografik-skills .skill-divider {
-    border-top: 2px solid rgba(161, 67, 64, 0.70);
-}
-
 /* Infografik Beschreibung */
 .infografik-description {
     width: 100%;
     max-width: 1420px;
-    margin: 0 auto 50px auto;
+    margin: 50px auto;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -450,8 +449,8 @@ body {
 
 .description-text {
     color: #777777;
-    font-size: 20px;
-    line-height: 31px;
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.6;
 }
 
 /* Image Slider */
@@ -542,10 +541,10 @@ body {
     max-width: 1420px;
     margin: 50px auto 0 auto;
     color: #1F2C3D;
-    font-size: 50px;
+    font-size: clamp(30px, 4vw, 50px);
     font-family: 'Gloock', serif;
     font-weight: 400;
-    line-height: 75px;
+    line-height: 1.5;
 }
 
 .section-divider {
@@ -561,8 +560,8 @@ body {
     max-width: 1420px;
     margin: 30px auto 0 auto;
     color: #1F2C3D;
-    font-size: 20px;
-    line-height: 31px;
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.6;
 }
 
 /* Footer */
@@ -574,18 +573,8 @@ body {
 }
 
 /* ============ RESPONSIVE STYLES ============ */
-@media (max-width: 992px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 576px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* Für größere Bildschirme */
 @media (max-width: 1600px) {
     .portfolio-title {
         font-size: 200px;
@@ -596,6 +585,7 @@ body {
     }
 }
 
+/* Für mittelgroße Bildschirme */
 @media (max-width: 1200px) {
     .hero-content {
         margin-left: 100px;
@@ -624,21 +614,67 @@ body {
         line-height: 65px;
     }
     
-    .statement,
-    .infografik-statement,
-    .section-title {
-        font-size: 40px;
-        line-height: 60px;
-    }
-    
     .infografik-statement .statement-text,
     .infografik-statement .statement-highlight {
         font-size: 40px;
         line-height: 60px;
     }
+
+    /* Anpassungen für Description Section */
+    .skills-container {
+        width: 35%;
+        min-width: 300px;
+    }
+    
+    .statement {
+        width: 65%;
+    }
+    
+    .skill-item {
+        font-size: 17px;
+    }
 }
 
+/* Für Tablets */
 @media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .description .container {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .skills-container {
+        width: 100%;
+        max-width: 460px;
+    }
+    
+    .statement {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+	
+	.about {
+        padding-top: 20px;
+    }
+    
+    .skill-item {
+        font-size: 16px;
+    }
+    
+    .infografik-statement {
+        margin-top: 40px;
+    }
+    
+    .infografik-gallery,
+    .illustration-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+    
     .hero-content {
         margin-left: 80px;
     }
@@ -648,30 +684,12 @@ body {
         line-height: 80px;
     }
     
-    .statement,
-    .infografik-statement {
-        font-size: 30px;
-        line-height: 45px;
-    }
-    
     .intro-text {
         max-width: 350px;
     }
-    
-    .description .container {
-        flex-direction: column;
-    }
-    
-    .statement {
-        margin-top: 40px;
-    }
-    
-    .infografik-gallery,
-    .illustration-gallery {
-        grid-template-columns: 1fr 1fr;
-    }
 }
 
+/* Für kleine Tablets und große Smartphones */
 @media (max-width: 768px) {
     .main-nav {
         display: none;
@@ -716,20 +734,6 @@ body {
         width: 100%;
     }
     
-    .statement,
-    .infografik-statement,
-    .section-title {
-        width: 100%;
-        font-size: 24px;
-        line-height: 36px;
-    }
-    
-    .infografik-statement .statement-text,
-    .infografik-statement .statement-highlight {
-        font-size: 24px;
-        line-height: 36px;
-    }
-    
     .infografik-gallery,
     .illustration-gallery {
         grid-template-columns: 1fr;
@@ -747,14 +751,14 @@ body {
     .color-block {
         height: 300px;
     }
-    
-    .infografik-statement {
-        width: 90%;
-        margin: 100px auto 50px auto;
-    }
 }
 
+/* Für Smartphones */
 @media (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
     .hero-content {
         margin-left: 20px;
         max-width: 90%;
@@ -781,7 +785,24 @@ body {
     }
     
     .filter-nav {
-        overflow-x: auto;
-        padding-bottom: 10px;
+        gap: 30px;
+    }
+    
+    .skill-item {
+        font-size: 15px;
+    }
+	
+	.statement, 
+    .infografik-statement {
+        font-size: clamp(32px, 7vw, 40px);
+        line-height: 1.5;
+    }
+	
+	.statement {
+        margin-top: 15px;
+    }
+    
+    .about {
+        padding-top: 20px;
     }
 }

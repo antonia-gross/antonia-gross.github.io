@@ -7,6 +7,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
     <link href="../style.css" rel="stylesheet" type="text/css" media="screen">
     <!-- Du musst die Fustat-Schriftart selbst einbinden, da sie nicht bei Google Fonts verfügbar ist -->
+    <style>
+        /* Seitenspezifische Anpassungen - können auch in die style.css integriert werden */
+        .projekt-wrapper {
+            width: 100%;
+            max-width: 1420px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Entfernt die verschachtelte Container-Struktur, die das Alignment stört */
+        .projekt-filter, 
+        .projekt-grid {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        
+        .projekt-filter {
+            margin-top: 70px;
+            margin-bottom: 30px;
+        }
+        
+        /* Stellt sicher, dass der erste Filter-Item keinen Abstand hat */
+        .filter-nav {
+            padding-left: 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -28,14 +55,14 @@
     <!-- Hero Section für Projekte -->
     <section class="projekt-hero">
         <div class="hero-image">
-            <!-- Hier kommt dein Header-Bild hin -->
             <img src="../images/projekte/antonia.jpg" alt="Projekte Header" class="projekt-hero-img">
         </div>
     </section>
 
-    <!-- Projekt-Filter Navigation -->
-    <section class="projekt-filter">
-        <div class="container">
+    <!-- Ein gemeinsamer Wrapper für Filter und Grid -->
+    <div class="projekt-wrapper">
+        <!-- Projekt-Filter Navigation -->
+        <section class="projekt-filter">
             <div class="filter-nav">
                 <div class="filter-item active">Alle</div>
                 <div class="filter-item">Branding</div>
@@ -47,20 +74,17 @@
                 <div class="filter-item">Illustrationen</div>
                 <div class="filter-item">Fotografie</div>
             </div>
-            <div class="filter-indicator"></div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projekt-Grid -->
-    <section class="projekt-grid">
-        <div class="container">
+        <!-- Projekt-Grid direkt nach Filter ohne weitere verschachtelte Container -->
+        <section class="projekt-grid">
             <div class="grid-container">
                 <!-- Projekt 1 -->
                 <div class="projekt-item">
                     <img src="../images/projekte/salty_chuu.jpg" alt="Projekt 1">
                     <div class="projekt-overlay">
                         <h3>Salty Chuu</h3>
-                        <p>Corpoarte Design</p>
+                        <p>Corporate Design</p>
                     </div>
                 </div>
                 
@@ -127,8 +151,8 @@
                 <div class="projekt-placeholder"></div>
                 <div class="projekt-placeholder"></div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <footer>
         <div class="container">
@@ -136,9 +160,30 @@
         </div>
     </footer>
 
-    <!-- Optional: JavaScript für Filterung -->
+    <!-- Filter-Funktionalität -->
     <script>
-        // Filter-Funktionalität hier einbauen, wenn gewünscht
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterItems = document.querySelectorAll('.filter-item');
+            
+            filterItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Aktiven Filter setzen
+                    filterItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Hier kann die Filter-Logik implementiert werden
+                    // z.B. Projekte basierend auf Kategorie anzeigen/ausblenden
+                });
+            });
+        });
+    </script>
+</body>
+</html>     <!-- Footer-Inhalt hier -->
+        </div>
+    </footer>
+
+    <!-- Filter-Funktionalität -->
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const filterItems = document.querySelectorAll('.filter-item');
             
