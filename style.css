@@ -355,6 +355,7 @@ body.menu-open {
 .description-divider {
     height: 1px;
     background: black;
+	margin-bottom: 40px;
 }
 
 .portfolio-image {

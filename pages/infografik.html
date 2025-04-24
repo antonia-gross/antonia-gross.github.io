@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
     <link href="../style.css" rel="stylesheet" type="text/css" media="screen">
     <!-- Du musst die Fustat-Schriftart selbst einbinden, da sie nicht bei Google Fonts verfügbar ist -->
-	    <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.querySelector('.hamburger-menu');
             const mobileNav = document.querySelector('.mobile-nav');
@@ -28,7 +28,7 @@
                 <div class="logo-icon"></div>
                 <div class="logo-text">Logo</div>
             </div>
-			<div class="hamburger-menu">
+            <div class="hamburger-menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -40,18 +40,18 @@
                 <a href="../index.html#contact">Illustrationen</a>
             </nav>
         </div>
-		<nav class="mobile-nav">
+        <nav class="mobile-nav">
             <a href="../index.html#about">Über mich</a>
             <a href="projekte.html">Projekte</a>
             <a href="../index.html#specialties">Fotografien</a>
             <a href="../index.html#contact">Illustrationen</a>
-		</nav>
+        </nav>
     </header>
 
     <!-- Hauptinhalt -->
-    <div class="infografik-container">
-        <!-- Skills und Statement in derselben Struktur wie auf der Startseite -->
-        <div class="description">
+    <main>
+        <!-- Skills und Statement - Struktur wie auf der Startseite -->
+        <section class="description">
             <div class="container">
                 <div class="skills-container infografik-skills">
                     <div class="skills-list">
@@ -71,10 +71,10 @@
                     <span class="statement-text"> einer Infografik, das das Thema Frisuren neu denkt – verspielt, frisch und charakterstark.</span>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Projektbeschreibung -->
-        <div class="infografik-description">
+        <section class="container">
             <div class="description-content">
                 <p class="description-text">
                     Dieses Projekt ist ein Redesign meines Schulprojekts von 2019 – komplett neu gedacht, visuell aufgefrischt und auf eine junge, trendaffine Zielgruppe zugeschnitten. Entstanden ist eine verspielte Infografik rund ums Thema Frisuren, die grafisch knallt und informativ bleibt. Mit einem Mix aus kräftigem Schwarz, auffälligem Rot und handgezeichneten Styles entsteht eine visuelle Story, die Spaß macht und Lust aufs Entdecken weckt. Ob Magazinseite, Instagram-Post oder Produktanhänger – das Design funktioniert überall und bleibt im Kopf.
@@ -90,38 +90,46 @@
                     <div class="slider-dot"></div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Bildergalerie -->
-        <div class="infografik-gallery">
-            <img src="../images/infografik/handy.jpg" alt="Infografik Detail 1" class="gallery-image gallery-image-vertical">
-            <img src="../images/infografik/instagram_1.jpg" alt="Infografik Detail 2" class="gallery-image gallery-image-square">
-            <img src="../images/infografik/instagram_2.jpg" alt="Infografik Detail 3" class="gallery-image gallery-image-square">
-        </div>
+        <section class="container">
+            <div class="infografik-gallery">
+                <img src="../images/infografik/handy.jpg" alt="Infografik Detail 1" class="gallery-image gallery-image-vertical">
+                <img src="../images/infografik/instagram_1.jpg" alt="Infografik Detail 2" class="gallery-image gallery-image-square">
+                <img src="../images/infografik/instagram_2.jpg" alt="Infografik Detail 3" class="gallery-image gallery-image-square">
+            </div>
+        </section>
 
         <!-- Illustrationen Sektion -->
-        <h2 class="section-title">Illustrationen</h2>
-        <div class="section-divider"></div>
-        <p class="section-description">
-            Die selbstgezeichneten Illustrationen sind das Herzstück dieses Projekts – lebendig und dynamisch. Jede Frisur habe ich mit viel Liebe zum Detail entwickelt, um nicht nur visuell zu überzeugen, sondern auch die Vielfalt und Kreativität des Themas widerzuspiegeln. Durch die spielerische Anordnung und den gezielten Einsatz von Linien und Texten wird jede Illustration perfekt in Szene gesetzt und trägt entscheidend zur Gesamtwirkung bei. Die Zeichnungen ergänzen das grafische Konzept auf einzigartige Weise und verleihen der Infografik eine frische, individuelle Note, die sie noch lebendiger macht.
-        </p>
+        <section class="container">
+            <h2 class="section-title">Illustrationen</h2>
+            <div class="section-divider"></div>
+            <p class="section-description">
+                Die selbstgezeichneten Illustrationen sind das Herzstück dieses Projekts – lebendig und dynamisch. Jede Frisur habe ich mit viel Liebe zum Detail entwickelt, um nicht nur visuell zu überzeugen, sondern auch die Vielfalt und Kreativität des Themas widerzuspiegeln. Durch die spielerische Anordnung und den gezielten Einsatz von Linien und Texten wird jede Illustration perfekt in Szene gesetzt und trägt entscheidend zur Gesamtwirkung bei. Die Zeichnungen ergänzen das grafische Konzept auf einzigartige Weise und verleihen der Infografik eine frische, individuelle Note, die sie noch lebendiger macht.
+            </p>
+        </section>
 
         <!-- Weitere Bilderanordnung -->
-        <div class="illustration-gallery">
-            <img src="../images/infografik/illustration.jpg" alt="Illustration 1" class="gallery-image gallery-image-square">
-            <div class="color-block">
-                <span class="color-code">#A14340</span>
+        <section class="container">
+            <div class="illustration-gallery">
+                <img src="../images/infografik/illustration.jpg" alt="Illustration 1" class="gallery-image gallery-image-square">
+                <div class="color-block">
+                    <span class="color-code">#A14340</span>
+                </div>
             </div>
-        </div>
+        </section>
 
         <!-- Weitere Bilder -->
-        <div class="full-width-gallery">
-            <img src="../images/infografik/label.jpg" alt="Detailansicht 1" class="full-width-image">
-            <img src="../images/infografik/broschuere_quer.jpg" alt="Detailansicht 2" class="full-width-image">
-        </div>
+        <section class="container">
+            <div class="full-width-gallery">
+                <img src="../images/infografik/label.jpg" alt="Detailansicht 1" class="full-width-image">
+                <img src="../images/infografik/broschuere_quer.jpg" alt="Detailansicht 2" class="full-width-image">
+            </div>
+        </section>
+    </main>
 
-        <!-- Footer Platzhalter -->
-        <div class="footer-placeholder"></div>
-    </div>
+    <!-- Footer Platzhalter -->
+    <footer class="footer-placeholder"></footer>
 </body>
 </html>
