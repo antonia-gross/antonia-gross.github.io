@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Antonia Groß</title>
     <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
-    <link href="Test.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css" media="screen">
     <!-- Du musst die Fustat-Schriftart selbst einbinden, da sie nicht bei Google Fonts verfügbar ist -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+        });
+    </script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -17,56 +28,67 @@
                 <div class="logo-icon"></div>
                 <div class="logo-text">Logo</div>
             </div>
-<nav class="main-nav">
-    <a href="#about">Über mich</a>
-    <a href="pages/projekte.html">Projekte</a>
-    <a href="#specialties">Fotografien</a>
-    <a href="#contact">Illustrationen</a>
-</nav>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="main-nav">
+                <a href="#about">Über mich</a>
+                <a href="pages/projekte.html">Projekte</a>
+                <a href="#specialties">Fotografien</a>
+                <a href="#contact">Illustrationen</a>
+            </nav>
         </div>
+        <nav class="mobile-nav">
+            <a href="#about">Über mich</a>
+            <a href="pages/projekte.html">Projekte</a>
+            <a href="#specialties">Fotografien</a>
+            <a href="#contact">Illustrationen</a>
+        </nav>
     </header>
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1 class="portfolio-title">Portfolio</h1>
-        <h2 class="name">Antonia Groß</h2>
-        <p class="intro-text">
-            Mein Antrieb ist die Neugierde, die Freude an Design-Experimenten und der Wunsch, 
-            aus meinem besonderen Talent für vielseitige, breitgefächerte Anfangsideen großartige 
-            visuelle Ergebnisse für den Kunden zu erzielen – und zwar in allen Disziplinen der Kommunikation.
-        </p>
-        
-        <div class="specialties-container">
-            <div class="circle-badge"></div>
-            <h3 class="profession">Grafik- & Kommunikationsdesign</h3>
-            <p class="specialties">Printdesign | Webdesign | Illustrationen | Fotografien</p>
-        </div>
-    </div>
-</section>
-
-<!-- Description Section -->
-<section class="description">
-    <div class="container">
-        <div class="skills-container">
-            <div class="skills-list">
-                <div class="skill-item">motiviert</div>
-                <div class="skill-divider"></div>
-                <div class="skill-item">aufgeschlossen</div>
-                <div class="skill-divider"></div>
-                <div class="skill-item">kreativ</div>
-                <div class="skill-divider"></div>
-                <div class="skill-item">vielseitig</div>
-                <div class="skill-divider"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="portfolio-title">Portfolio</h1>
+            <h2 class="name">Antonia Groß</h2>
+            <p class="intro-text">
+                Mein Antrieb ist die Neugierde, die Freude an Design-Experimenten und der Wunsch, 
+                aus meinem besonderen Talent für vielseitige, breitgefächerte Anfangsideen großartige 
+                visuelle Ergebnisse für den Kunden zu erzielen – und zwar in allen Disziplinen der Kommunikation.
+            </p>
+            
+            <div class="specialties-container">
+                <div class="circle-badge"></div>
+                <h3 class="profession">Grafik- & Kommunikationsdesign</h3>
+                <p class="specialties">Printdesign | Webdesign | Illustrationen | Fotografien</p>
             </div>
         </div>
-        <div class="statement">
-            <span class="statement-text">Ich bin eine motivierte, kreative Designerin, </span>
-            <span class="statement-highlight">die es liebt zu tüfteln - </span>
-            <span class="statement-text">im Web, im Print, - für komplette Corporate Designs. </span>
+    </section>
+
+    <!-- Description Section -->
+    <section class="description">
+        <div class="container">
+            <div class="skills-container">
+                <div class="skills-list">
+                    <div class="skill-item">motiviert</div>
+                    <div class="skill-divider"></div>
+                    <div class="skill-item">aufgeschlossen</div>
+                    <div class="skill-divider"></div>
+                    <div class="skill-item">kreativ</div>
+                    <div class="skill-divider"></div>
+                    <div class="skill-item">vielseitig</div>
+                    <div class="skill-divider"></div>
+                </div>
+            </div>
+            <div class="statement">
+                <span class="statement-text">Ich bin eine motivierte, kreative Designerin, </span>
+                <span class="statement-highlight">die es liebt zu tüfteln - </span>
+                <span class="statement-text">im Web, im Print, - für komplette Corporate Designs. </span>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- About Section -->
     <section class="about" id="about">
@@ -81,7 +103,6 @@
                 <div class="about-divider"></div>
             </div>
             <div class="portfolio-image">
-                <!-- Hier kommt dein tatsächliches Bild hin -->
                 <img src="images/startseite/infografik_broschuere_quer_1420x698px.jpg" alt="Portfolio-Beispiel">
             </div>
         </div>
