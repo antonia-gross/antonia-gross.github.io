@@ -17,6 +17,19 @@
                 mobileNav.classList.toggle('active');
                 document.body.classList.toggle('menu-open');
             });
+
+            // Scroll-Funktion für den Pfeil im Kreis
+            const scrollArrow = document.querySelector('.circle-badge');
+            if (scrollArrow) {
+                scrollArrow.addEventListener('click', function() {
+                    const heroSection = document.querySelector('.hero');
+                    const heroHeight = heroSection.offsetHeight;
+                    window.scrollTo({
+                        top: heroHeight,
+                        behavior: 'smooth'
+                    });
+                });
+            }
         });
     </script>
 </head>
@@ -50,19 +63,27 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-background-image"></div>
         <div class="hero-content">
             <h1 class="portfolio-title">Portfolio</h1>
             <h2 class="name">Antonia Groß</h2>
-            <p class="intro-text">
-                Mein Antrieb ist die Neugierde, die Freude an Design-Experimenten und der Wunsch, 
-                aus meinem besonderen Talent für vielseitige, breitgefächerte Anfangsideen großartige 
-                visuelle Ergebnisse für den Kunden zu erzielen – und zwar in allen Disziplinen der Kommunikation.
-            </p>
+            <div class="intro-container">
+                <div class="vertical-line"></div>
+                <p class="intro-text">
+                    Mein Antrieb ist die Neugierde, die Freude an Design-Experimenten und der Wunsch, 
+                    aus meinem besonderen Talent für vielseitige, breitgefächerte Anfangsideen großartige 
+                    visuelle Ergebnisse für den Kunden zu erzielen – und zwar in allen Disziplinen der Kommunikation.
+                </p>
+            </div>
             
             <div class="specialties-container">
-                <div class="circle-badge"></div>
-                <h3 class="profession">Grafik- & Kommunikationsdesign</h3>
-                <p class="specialties">Printdesign | Webdesign | Illustrationen | Fotografien</p>
+                <div class="circle-badge">
+                    <div class="down-arrow"></div>
+                </div>
+                <div class="specialties-text">
+                    <h3 class="profession">Grafik- & Kommunikationsdesign</h3>
+                    <p class="specialties">Printdesign | Webdesign | Illustrationen | Fotografien</p>
+                </div>
             </div>
         </div>
     </section>

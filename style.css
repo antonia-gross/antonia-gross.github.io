@@ -24,6 +24,11 @@ body {
     padding: 0 20px;
 }
 
+section.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /* ============ NAVIGATION ============ */
 .navbar {
     width: 100%;
@@ -43,6 +48,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.navbar + main .description {
+    margin-top: 75px;
 }
 
 .logo {
@@ -162,26 +171,53 @@ body.menu-open {
 
 /* ============ HERO SECTION (STARTSEITE) ============ */
 .hero {
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     background-color: #333; /* Fallback */
-    background-image: url('images/startseite/antonia.jpg');
-    background-size: cover;
-    background-position: center;
     position: relative;
     padding-top: 77px; /* Platz für die Navbar */
     display: flex;
-    align-items: center; /* Vertikale Zentrierung */
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+/* Hinteres Bild */
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/startseite/antonia.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1; /* Hintergrund-Ebene */
+}
+
+/* PNG-Bild über dem Hero-Content */
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/startseite/antonia_transparent.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 3; /* PNG-Bild vor dem Content */
 }
 
 .hero-content {
     position: relative;
-    padding: 60px 20px 160px 20px;
+    padding: 60px 20px;
     margin-left: 154px;
     max-width: 80%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    z-index: 2; /* Content hinter dem PNG-Bild */
 }
 
 .portfolio-title {
@@ -189,7 +225,7 @@ body.menu-open {
     font-size: clamp(80px, 15vw, 250px);
     font-weight: 400;
     line-height: 0.8em;
-    margin-bottom: 40px;
+    margin-bottom: 0; /* Reduziert, damit Antonia Groß näher rückt */
 }
 
 .name {
@@ -197,23 +233,29 @@ body.menu-open {
     font-weight: 700;
     line-height: 1.2em;
     letter-spacing: 2.4px;
-    margin-top: 20px;
+    margin-top: 0; /* Reduziert, damit es näher an Portfolio rückt */
+    color: white; /* Name in weiß */
+    position: relative;
+    top: -30px; /* Anpassung, damit es auf Höhe der Unterkante von Portfolio steht */
 }
 
 .intro-text {
     width: 100%;
     max-width: 468px;
     font-size: clamp(16px, 1.5vw, 18px);
-    margin-top: 30px;
+    margin-top: 0; /* Reduziert, um mit nach oben zu rutschen */
+    color: white; /* Text in weiß */
+    position: relative;
+    top: -20px; /* Damit es mit nach oben rutscht */
 }
 
 .specialties-container {
-    margin-top: 60px;
+    margin-top: 40px; /* Reduziert, damit es mit nach oben rutscht */
     position: relative;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Zentriert die Elemente vertikal */
+    top: -20px; /* Damit es mit nach oben rutscht */
 }
 
 .circle-badge {
@@ -221,20 +263,43 @@ body.menu-open {
     height: 92px;
     border-radius: 50%;
     border: 3px solid white;
-    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Pfeil nach unten innerhalb des Kreises */
+.down-arrow {
+    width: 30px;
+    height: 30px;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(45deg);
+    position: relative;
+    top: -5px; /* Leicht nach oben versetzt für optische Zentrierung */
+}
+
+.specialties-text {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .profession {
     font-size: 25px;
     font-weight: 600;
-    margin-bottom: 10px;
-    margin-left: 120px;
-    margin-top: -60px;
+    margin-bottom: 5px;
+    color: white; /* Text in weiß */
+    line-height: 1.2;
 }
 
 .specialties {
     font-size: 18px;
-    margin-left: 120px;
+    color: white; /* Text in weiß */
+    line-height: 1.2;
 }
 
 /* ============ DESCRIPTION SECTION (STARTSEITE) ============ */
@@ -355,7 +420,7 @@ body.menu-open {
 .description-divider {
     height: 1px;
     background: black;
-	margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .portfolio-image {
@@ -530,6 +595,14 @@ body.menu-open {
     line-height: 1.6;
 }
 
+/* Standardisierte Abstände für alle Bildersektionen */
+.image-slider,
+.infografik-gallery,
+.illustration-gallery,
+.full-width-gallery {
+    margin-bottom: 20px; /* Einheitlicher Abstand von 20px nach unten für alle Bildersektionen */
+}
+
 /* Image Slider */
 .image-slider {
     position: relative;
@@ -557,16 +630,16 @@ body.menu-open {
     border-radius: 50%;
 }
 
-/* Galerien */
+/* Vereinheitlichte Galerie-Abstände */
 .infografik-gallery,
 .illustration-gallery,
 .full-width-gallery {
     width: 100%;
     max-width: 1420px;
-    margin: 50px auto;
+    margin: 0 auto 20px auto; /* Vereinheitlichter Abstand unten */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 20px; /* Einheitlicher horizontaler und vertikaler Abstand */
 }
 
 .gallery-image {
@@ -587,13 +660,14 @@ body.menu-open {
 .full-width-gallery {
     display: flex;
     flex-direction: column;
+    gap: 20px; /* Einheitlicher Abstand zwischen den Bildern */
 }
 
 .full-width-image {
     width: 100%;
     height: auto;
     object-fit: cover;
-    margin-bottom: 20px;
+    margin-bottom: 0; /* Entferne den inkonsistenten Abstand */
 }
 
 /* Farb-Block */
@@ -612,11 +686,11 @@ body.menu-open {
     font-weight: 600;
 }
 
-/* Abschnittstitel */
+/* Abschnittstitel mit einheitlichen Abständen */
 .section-title {
     width: 100%;
     max-width: 1420px;
-    margin: 50px auto 0 auto;
+    margin: 40px auto 20px auto; /* Oben 40px, unten 20px */
     color: #1F2C3D;
     font-size: clamp(30px, 4vw, 50px);
     font-family: 'Gloock', serif;
@@ -628,14 +702,14 @@ body.menu-open {
     width: 100%;
     max-width: 1420px;
     height: 1px;
-    margin: 43px auto 0 auto;
+    margin: 0 auto 20px auto; /* Oben 0, unten 20px */
     background-color: black;
 }
 
 .section-description {
     width: 100%;
     max-width: 1420px;
-    margin: 30px auto 0 auto;
+    margin: 0 auto 20px auto; /* Oben 0, unten 20px */
     color: #1F2C3D;
     font-size: clamp(16px, 2vw, 20px);
     line-height: 1.6;
@@ -673,12 +747,21 @@ body.menu-open {
         height: 80px;
     }
     
+    .down-arrow {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .specialties-text {
+        margin-left: 25px;
+    }
+    
     .profession {
-        margin-left: 100px;
+        font-size: 22px;
     }
     
     .specialties {
-        margin-left: 100px;
+        font-size: 17px;
     }
     
     .portfolio-title {
@@ -689,6 +772,7 @@ body.menu-open {
     .name {
         font-size: 50px;
         line-height: 65px;
+        top: -25px;
     }
     
     .infografik-statement .statement-text,
@@ -754,6 +838,7 @@ body.menu-open {
         grid-template-columns: 1fr 1fr;
     }
 }
+
 
 /* Für kleine Tablets und große Smartphones */
 @media (max-width: 768px) {
