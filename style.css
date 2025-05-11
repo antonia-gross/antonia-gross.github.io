@@ -723,6 +723,31 @@ body.menu-open {
     margin-top: 50px;
 }
 
+
+/* ============ SALTY CHUU STYLES ============ */
+
+/* Typologo-spezifische Styles */
+.typologo-skills .skill-item {
+    color: #A92638;
+}
+
+.typologo-skills .skill-divider {
+    border-top: 2px solid #A92638;
+}
+
+.typologo-statement .statement-highlight {
+    color: #A92638;
+}
+
+.typologo-gallery {
+    width: 100%;
+    max-width: 1420px;
+    margin: 0 auto 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
 /* ============ RESPONSIVE STYLES ============ */
 
 /* Für größere Bildschirme */
@@ -837,6 +862,18 @@ body.menu-open {
     .illustration-gallery {
         grid-template-columns: 1fr 1fr;
     }
+	
+	.typologo-skills {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .typologo-statement {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 40px;
+    }
+}
 }
 
 
@@ -912,6 +949,14 @@ body.menu-open {
     
     .color-block {
         height: 300px;
+    }
+	
+	.typologo-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .typologo-gallery .gallery-image {
+        height: auto;
     }
 }
 
