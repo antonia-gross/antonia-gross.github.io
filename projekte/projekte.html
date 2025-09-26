@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --primary-color: #782117;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: white;
+            overflow-x: hidden;
+        }
+
+        .page-container {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            background: white;
+        }
+
+        .header-section {
+            width: 100%;
+            padding: 80px 0 0px;
+            background: white;
+            position: relative;
+        }
+
+        .main-title {
+            color: var(--primary-color);
+            font-size: min(130px, 12vw);
+            font-family: Inter;
+            font-weight: 100;
+            line-height: 120px;
+            margin-left: min(20px, 2vw);
+            margin-top: 60px;
+            margin-bottom: 0px;
+        }
+
+        .subtitle {
+            color: var(--primary-color);
+            font-size: min(30px, 3vw);
+            font-family: Inter;
+            font-weight: 300;
+            line-height: 40px;
+            margin-left: min(20px, 2vw);
+            margin-bottom: -78px;
+            margin-top: 30px;
+        }
+
+        .hero-typography-section {
+            width: 100%;
+            height: 850px;
+            background: #F9913C;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 0 130px 0;
+            box-sizing: border-box;
+        }
+
+        .hero-typography-text {
+            color: white;
+            font-size: min(60px, 5vw);
+            font-family: Inter;
+            font-weight: 100;
+            line-height: 70px;
+            text-align: justify;
+            width: 100%;
+            margin: 0;
+            hyphens: auto;
+        }
+
+        .hero-typography-highlight {
+            color: var(--primary-color);
+        }
+
+        .info-section {
+            position: absolute;
+            right: min(20px, 2vw);
+            top: 110px;
+        }
+
+        .info-line {
+            width: min(460px, 40vw);
+            height: 0;
+            border-bottom: 1px dotted var(--primary-color);
+            margin-bottom: 55px;
+            position: relative;
+        }
+
+        .info-item {
+            position: absolute;
+            left: 0;
+            top: 8px;
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        .info-label {
+            color: var(--primary-color);
+            font-size: min(30px, 2.5vw);
+            font-family: Inter;
+            font-weight: 300;
+            opacity: 0.50;
+            text-align: left;
+        }
+
+        .info-value {
+            color: var(--primary-color);
+            font-size: min(30px, 2.5vw);
+            font-family: Inter;
+            font-weight: 300;
+            text-align: right;
+            margin-left: auto;
+        }
+
+        .main-divider {
+            width: calc(100% - 40px);
+            height: 0;
+            border-bottom: 1px dotted var(--primary-color);
+            margin: 80px 20px 20px 20px;
+        }
+
+        /* Fixed Gallery Styles */
+        .gallery-section {
+            background: white;
+            padding: 0px 0;
+        }
+
+        .gallery-row {
+            display: flex;
+            gap: 20px;
+            margin: 20px 20px;
+            width: calc(100% - 40px);
+        }
+        
+        .gallery-item-wrapper {
+            position: relative;
+            flex: 1;
+            max-width: calc(50% - 10px);
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            cursor: pointer;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .gallery-item-wrapper .gallery-item {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            height: 100%;
+            min-width: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .gallery-item-wrapper:hover .gallery-item-overlay {
+            opacity: 0.7;
+        }
+        
+        .gallery-item-wrapper:hover .gallery-item {
+            transform: translateX(-50%) scale(1.05);
+        }
+        
+        /* Individuelle Farben für jedes Projekt */
+        .gallery-item-wrapper:nth-child(1) .gallery-item-overlay {
+            background: #AE2134;
+        }
+        
+        .gallery-item-wrapper:nth-child(2) .gallery-item-overlay {
+            background: #FFF;
+        }
+        
+        .gallery-row:nth-child(2) .gallery-item-wrapper:nth-child(1) .gallery-item-overlay {
+            background: #782117;
+        }
+        
+        .gallery-row:nth-child(2) .gallery-item-wrapper:nth-child(2) .gallery-item-overlay {
+            background: #A14340;
+        }
+        
+        .gallery-row:nth-child(3) .gallery-item-wrapper:nth-child(1) .gallery-item-overlay {
+            background: #FFF;
+        }
+        
+        .gallery-row:nth-child(3) .gallery-item-wrapper:nth-child(2) .gallery-item-overlay {
+            background: #FFF;
+        }
+        
+        .gallery-row:nth-child(4) .gallery-item-wrapper:nth-child(1) .gallery-item-overlay {
+            background: #FFF;
+        }
+        
+        .gallery-row:nth-child(4) .gallery-item-wrapper:nth-child(2) .gallery-item-overlay {
+            background: #FFF;
+        }
+        
+        /* Responsive Anpassungen */
+        @media (max-width: 768px) {
+            .gallery-item-wrapper {
+                max-width: 100%;
+            }
+            
+            .gallery-row {
+                flex-direction: column;
+                gap: 15px;
+                margin: 15px;
+                width: calc(100% - 30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header Section - Header wird automatisch hier eingefügt -->
+        <div class="header-section">
+            <!-- Main Title -->
+            <h1 class="main-title">Projekte</h1>
+            <!-- Project Info Section -->
+            <div class="info-section">
+                <div class="info-line">
+                    <div class="info-item">
+                        <span class="info-label">Kategorie</span>
+                        <span class="info-value">Portfolio</span>
+                    </div>
+                </div>
+                <div class="info-line">
+                    <div class="info-item">
+                        <span class="info-label">Jahr</span>
+                        <span class="info-value">2024</span>
+                    </div>
+                </div>
+                <div class="info-line">
+                    <div class="info-item">
+                        <span class="info-label">Fokus</span>
+                        <span class="info-value">Design</span>
+                    </div>
+                </div>
+                <div class="info-line">
+                    <div class="info-item">
+                        <span class="info-label">Thema</span>
+                        <span class="info-value">Übersicht</span>
+                    </div>
+                </div>
+            </div>
+            <p class="subtitle">Übersicht</p>
+            <!-- Main Divider -->
+            <div class="main-divider"></div>
+        </div>
+        
+        <!-- Hero Section with Typography -->
+        <div class="hero-image">
+            <div class="hero-typography-section">
+                <p class="hero-typography-text">
+                    Diese Arbeiten sind <span class="hero-typography-highlight">fiktive Projekte</span> aus Ausbildung und freien Konzeptideen – gestaltet mit dem Anspruch, Haltung, Ästhetik und Funktion zu vereinen. Echte Kundenprojekte bleiben aus Datenschutzgründen im Hintergrund.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Gallery Section - 4 Rows with 2 Images each -->
+        <div class="gallery-section">
+            <!-- Gallery Row 1 -->
+            <div class="gallery-row">
+                <a href="saltychuu.html" class="gallery-item-wrapper">
+                    <img class="gallery-item" src="../images/projekte/SaltyChuu.jpg" alt="Salty Chuu">
+                    <div class="gallery-item-overlay"></div>
+                </a>
+                <a href="#" class="gallery-item-wrapper">
+                    <img class="gallery-item" src="../images/projekte/WildFit.jpg" alt="WildFit">
+                    <div class="gallery-item-overlay"></div>
+                </a>
+            </div>
+            
+            <!-- Gallery Row 2 -->
+            <div class="gallery-row">
+                <a href="salvamaro.html" class="gallery-item-wrapper">
+                    <img class="gallery-item" src="../images/projekte/Salvamaro.jpg" alt="Salvamaro">
+                    <div class="gallery-item-overlay"></div>
+                </a>
+                <a href="infografik.html" class="gallery-item-wrapper">
+                    <img class="gallery-item" src="../images/projekte/Infografik.jpg" alt="Infografik">
+                    <div class="gallery-item-overlay"></div>
+                </a>
+            </div>
+            
+            <!-- Gallery Row 3 -->
+            <div class="gallery-row">
+                <a href="projekt-5.html" class="gallery-item-wrapper">
+                    <img class="gallery-item" src="../images/projekte/projekt_5.jpg" alt="Projekt 5">
+                    <div class="gallery-item-overlay"></div>
+                </a>
+                <a href="projekt-6.html" class="gallery-item-wrapper">
+                    <img class="gallery-item" src="../images/projekte/projekt_6.jpg" alt="Projekt 6">
+                    <div class="gallery-item-overlay"></div>
+                </a>
+            </div>
+            
+            <!-- Gallery Row 4 -->
+            <div class="gallery-row">
+                <a href="projekt-7.html" class="gallery-item-wrapper">
+                    <img class="gallery-item" src="../images/projekte/projekt_7.jpg" alt="Projekt 7">
+                    <div class="gallery-item-overlay"></div>
+                </a>
+                <a href="projekt-8.html" class="gallery-item-wrapper">
+                    <img class="gallery-item" src="../images/projekte/projekt_8.jpg" alt="Projekt 8">
+                    <div class="gallery-item-overlay"></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer wird automatisch hier eingefügt -->
+    </div>
+	
+    <script src="js/script.js"></script>
+</body>
+</html>

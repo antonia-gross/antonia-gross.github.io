@@ -81,5 +81,72 @@ function initializeVideoObserver() {
     }
 }
 
+// Image Comparison Slider JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('imageSlider');
+    const handle = document.getElementById('sliderHandle');
+    const afterImage = slider.querySelector('.image-after');
+    
+    let isDragging = false;
+    
+    function updateSlider(x) {
+        const rect = slider.getBoundingClientRect();
+        const percentage = Math.max(0, Math.min(100, (x - rect.left) / rect.width * 100));
+        
+        handle.style.left = percentage + '%';
+        afterImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+        
+        // Label nur anzeigen wenn Slider nach links verschoben wird (unter 72.5%)
+        const schoolLabel = document.getElementById('schoolLabel');
+        if (percentage < 72.5) {
+            schoolLabel.classList.add('visible');
+        } else {
+            schoolLabel.classList.remove('visible');
+        }
+    }
+    
+    // Mouse events
+    handle.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        e.preventDefault();
+    });
+    
+    document.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+            updateSlider(e.clientX);
+        }
+    });
+    
+    document.addEventListener('mouseup', function() {
+        isDragging = false;
+    });
+    
+    // Touch events for mobile
+    handle.addEventListener('touchstart', function(e) {
+        isDragging = true;
+        e.preventDefault();
+    });
+    
+    document.addEventListener('touchmove', function(e) {
+        if (isDragging) {
+            updateSlider(e.touches[0].clientX);
+        }
+    });
+    
+    document.addEventListener('touchend', function() {
+        isDragging = false;
+    });
+    
+    // Click on slider to move handle
+    slider.addEventListener('click', function(e) {
+        if (e.target !== handle) {
+            updateSlider(e.clientX);
+        }
+    });
+    
+    // Initialize slider position to match right third
+    updateSlider(slider.getBoundingClientRect().left + slider.getBoundingClientRect().width * 0.725);
+});
+    
 // Beim Laden der Seite ausführen
 document.addEventListener('DOMContentLoaded', loadComponents);
